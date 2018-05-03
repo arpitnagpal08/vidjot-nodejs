@@ -1,0 +1,15 @@
+{{#each ideas}}
+    <div class="card card-body mt-2">
+        <h4>{{title}}</h4>
+        <p>{{details}}</p>
+        <a href="/ideas/edit/{{id}}" class="btn btn-dark btn-block">Edit</a>
+
+        <form action="/ideas/{{id}}?_method=DELETE" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit" class="btn btn-block btn-danger mt-2">Delete</button>
+    </form>
+
+    </div>
+    {{else}}
+    <p>No Video Ideas Listed</p>
+{{/each}}
